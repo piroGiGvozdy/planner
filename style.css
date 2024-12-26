@@ -2,7 +2,7 @@
     --blue: #87cddeff;
     --dark-blue: #164450ff;
     --white-blue: #afdde9ff;
-    --bg-color: #d7eef485;
+    --bg-color: rgba(215, 238, 244, 52);
 }
 
 html, body {
@@ -35,7 +35,6 @@ html, body {
     height: auto;
 }
 
-
 .month {
     width: 100%;
     padding: 20px;
@@ -51,23 +50,10 @@ html, body {
 
 .month-navigation {
     display: flex;
-    justify-content: space-between; /* Кнопки остаются по краям */
-    align-items: center; /* Центрируем всё по вертикали */
-    margin-bottom: 20px;
-    height: 50px; /* Фиксированная высота для предотвращения скачков */
-    width: 100%; /* Блок занимает всю ширину контейнера */
-    text-align: center;
-}
-
-#current-month {
-    flex: 1; /* Занимает оставшееся пространство между кнопками */
-    font-size: 20px;
-    font-weight: bold;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
     color: var(--dark-blue);
-    text-align: center; /* Центрируем текст */
-    margin: 0; /* Убираем возможные отступы */
-    line-height: 50px; /* Выравниваем текст по высоте блока */
-    white-space: nowrap; /* Предотвращаем перенос текста */
 }
 
 .nav-button {
@@ -75,22 +61,26 @@ html, body {
     border: none;
     color: var(--dark-blue);
     font-size: 20px;
-    width: 40px; /* Фиксированная ширина кнопок */
-    height: 40px; /* Фиксированная высота кнопок */
+    padding: 5px 15px;
+    margin: 0 10px;
     border-radius: 5px;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Центрирование текста внутри кнопки */
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
+
+/* .nav-button:last-of-type {
+    position: fixed;
+    top: 101px;
+    left: 80%;
+} */
 
 .nav-button:hover {
     background-color: var(--dark-blue);
+    color: var(--white-blue);
 }
 
-
 table {
+    /* position: fixed; */
     width: 100%;
     border-spacing: 5px 5px;
     table-layout: fixed;
@@ -103,7 +93,7 @@ thead th {
 }
 
 th, td button{
-    
+    font-size: 22px;
     height: 45px;
     width: 45px;
     text-align: center;
