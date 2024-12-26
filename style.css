@@ -1,5 +1,4 @@
-:root
-{
+:root {
     --blue: #87cddeff;
     --dark-blue: #164450ff;
     --white-blue: #afdde9ff;
@@ -8,69 +7,118 @@
 
 html, body {
     font-family: "Poppins", sans-serif;
-    font-size: 20px;
+    height: 100%;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--bg-color);
-    scroll-behavior: smooth;
-}
-
-.container
-{
-    max-width: 100%;
-    margin: 0px auto;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 .header-content {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed; /* Фиксируем логотип */
+    top: 20px; /* Расположение сверху */
+    left: 50%; /* Центрирование по горизонтали */
+    transform: translateX(-50%); /* Смещение, чтобы центрировать */
+    width: auto;
+    z-index: 1000; /* Чтобы логотип всегда был сверху */
 }
 
 .header_img {
-    margin-top: 10px;
     max-width: 120px;
+    height: auto;
 }
 
-.container h2 {
+
+.month {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем содержимое по горизонтали */
+}
+
+.container {
+    width: 100%;
+}
+
+.month-navigation {
+    display: flex;
+    justify-content: space-between; /* Кнопки остаются по краям */
+    align-items: center; /* Центрируем всё по вертикали */
+    margin-bottom: 20px;
+    height: 50px; /* Фиксированная высота для предотвращения скачков */
+    width: 100%; /* Блок занимает всю ширину контейнера */
+    text-align: center;
+}
+
+#current-month {
+    flex: 1; /* Занимает оставшееся пространство между кнопками */
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--dark-blue);
+    text-align: center; /* Центрируем текст */
+    margin: 0; /* Убираем возможные отступы */
+    line-height: 50px; /* Выравниваем текст по высоте блока */
+    white-space: nowrap; /* Предотвращаем перенос текста */
+}
+
+.nav-button {
+    background-color: var(--blue);
+    border: none;
+    color: var(--dark-blue);
+    font-size: 20px;
+    width: 40px; /* Фиксированная ширина кнопок */
+    height: 40px; /* Фиксированная высота кнопок */
+    border-radius: 5px;
+    cursor: pointer;
     display: flex;
     justify-content: center;
-    align-items: center;
-    color: var(--dark-blue);
+    align-items: center; /* Центрирование текста внутри кнопки */
+    transition: background-color 0.3s ease;
 }
+
+.nav-button:hover {
+    background-color: var(--dark-blue);
+}
+
 
 table {
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
     border-spacing: 5px 5px;
+    table-layout: fixed;
 }
 
-thead th{
+thead th {
     background-color: var(--dark-blue);
     color: var(--white-blue);
-    border-radius: 10px;
-    height: 40px;
-    width: 40px;
-    margin-right: 5px;
+    /* padding: 10px 0; */
 }
 
-th, td, tr {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 5px;
-    margin-bottom: 2px;
+th, td button{
+    
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    border-radius: 10px;
+    color: var(--dark-blue);
+    border: none;
+}
+
+th button{
+    background-color: var(--blue);
 }
 
 td button{
-    height: 40px;
-    width: 40px;
-    border: none;
+    /* height: 35px; */
     background-color: var(--white-blue);
-    text-align: center;
-    border-radius: 10px;
-    font-size: 22px;
-    color: var(--dark-blue);
 }
 
 .empty button{
@@ -81,29 +129,4 @@ td button{
     background-color: var(--dark-blue);
     color: var(--white-blue);
     font-weight: bold;
-}
-
-.month-navigation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.nav-button {
-    background-color: var(--blue);
-    border: none;
-    color: var(--dark-blue);
-    font-size: 20px;
-    padding: 5px 15px;
-    margin: 0 10px;
-    border-radius: 5px;
-    cursor: pointer;
-
-    transition: all .4s ease;
-}
-
-.nav-button:hover {
-    background-color: var(--dark-blue);
-    color: var(--white-blue);
 }
