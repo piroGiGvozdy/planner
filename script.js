@@ -43,7 +43,6 @@ function generateCalendar(month, year) {
                 ) {
                     button.classList.add("current-date");
                 }
-                button.addEventListener("click", () => alert(`You selected: ${date} ${monthNames[month]} ${year}`));
                 date++;
             }
             cell.appendChild(button);
