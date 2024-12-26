@@ -26,11 +26,9 @@ function generateCalendar(month, year) {
             const button = document.createElement("button");
 
             if (i === 0 && j < firstDay) {
-                button.textContent = prevMonthDate++;
                 button.className = "date-button inactive-date";
                 button.disabled = true;
             } else if (date > daysInMonth) {
-                button.textContent = nextMonthDate++;
                 button.className = "date-button inactive-date";
                 button.disabled = true;
             } else {
