@@ -1,0 +1,109 @@
+:root
+{
+    --blue: #87cddeff;
+    --dark-blue: #164450ff;
+    --white-blue: #afdde9ff;
+    --bg-color: #d7eef485;
+}
+
+html, body {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    scroll-behavior: smooth;
+}
+
+.container
+{
+    max-width: 100%;
+    margin: 0px auto;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_img {
+    margin-top: 10px;
+    max-width: 120px;
+}
+
+.container h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--dark-blue);
+}
+
+table {
+    width: 90%;
+    margin: 0 auto;
+    border-spacing: 5px 5px;
+}
+
+thead th{
+    background-color: var(--dark-blue);
+    color: var(--white-blue);
+    border-radius: 10px;
+    height: 40px;
+    width: 40px;
+    margin-right: 5px;
+}
+
+th, td, tr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    margin-bottom: 2px;
+}
+
+td button{
+    height: 40px;
+    width: 40px;
+    border: none;
+    background-color: var(--white-blue);
+    text-align: center;
+    border-radius: 10px;
+    font-size: 22px;
+    color: var(--dark-blue);
+}
+
+.empty button{
+    background-color: var(--blue);
+}
+
+.today button{
+    background-color: var(--dark-blue);
+    color: var(--white-blue);
+    font-weight: bold;
+}
+
+.month-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.nav-button {
+    background-color: var(--blue);
+    border: none;
+    color: var(--dark-blue);
+    font-size: 20px;
+    padding: 5px 15px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: all .4s ease;
+}
+
+.nav-button:hover {
+    background-color: var(--dark-blue);
+    color: var(--white-blue);
+}
