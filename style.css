@@ -5,118 +5,47 @@
     --bg-color: rgba(215, 238, 244, 52);
 }
 
-html, body {
-    font-family: "Poppins", sans-serif;
-    height: 100%;
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--bg-color);
-    min-height: 100vh;
-    flex-direction: column;
 }
-
-.header-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed; /* Фиксируем логотип */
-    top: 20px; /* Расположение сверху */
-    left: 50%; /* Центрирование по горизонтали */
-    transform: translateX(-50%); /* Смещение, чтобы центрировать */
-    width: auto;
-    z-index: 1000; /* Чтобы логотип всегда был сверху */
-}
-
-.header_img {
-    max-width: 120px;
-    height: auto;
-}
-
-.month {
+.calendar {
+    display: inline-block;
     width: 100%;
-    padding: 20px;
+    max-width: 100%;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Центрируем содержимое по горизонтали */
+    padding: 10px;
 }
-
-.container {
-    width: 100%;
-}
-
 .month-navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-    color: var(--dark-blue);
+    margin: 10px 0;
 }
-
-.nav-button {
-    background-color: var(--blue);
-    border: none;
-    color: var(--dark-blue);
-    font-size: 20px;
-    padding: 5px 15px;
-    margin: 0 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-/* .nav-button:last-of-type {
-    position: fixed;
-    top: 101px;
-    left: 80%;
-} */
-
-.nav-button:hover {
-    background-color: var(--dark-blue);
-    color: var(--white-blue);
-}
-
 table {
-    /* position: fixed; */
+    border-collapse: collapse;
+    margin: 0 auto;
     width: 100%;
-    border-spacing: 5px 5px;
-    table-layout: fixed;
 }
-
-thead th {
-    background-color: var(--dark-blue);
-    color: var(--white-blue);
-    /* padding: 10px 0; */
-}
-
-th, td button{
-    font-size: 22px;
-    height: 45px;
-    width: 45px;
+th, td {
+    padding: 5px;
     text-align: center;
-    border-radius: 10px;
-    color: var(--dark-blue);
+}
+th {
+    background-color: #f2f2f2;
+}
+td {
+    border: 1px solid #ddd;
+}
+.date-button {
+    background-color: #007bff;
+    color: white;
     border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
 }
-
-th button{
-    background-color: var(--blue);
-}
-
-td button{
-    /* height: 35px; */
-    background-color: var(--white-blue);
-}
-
-.empty button{
-    background-color: var(--blue);
-}
-
-.today button{
-    background-color: var(--dark-blue);
-    color: var(--white-blue);
-    font-weight: bold;
+.date-button:hover {
+    background-color: #0056b3;
 }

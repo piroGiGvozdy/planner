@@ -2,44 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=375, user-scalable=no">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Dimka's Planner</title>
+
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <img class="header_img" src="assets/logo.svg" alt="Logo">
+    <div class="calendar">
+        <div class="month-navigation">
+            <button id="prev-month">&laquo; Previous</button>
+            <span id="current-month">January 2024</span>
+            <button id="next-month">Next &raquo;</button>
         </div>
-    </header>
-
-    <div class="month">
-        <div class="container">
-            <div class="month-navigation">
-                <button id="prev-month" class="nav-button">❮</button>
-                <h2 id="current-month"></h2>
-                <button id="next-month" class="nav-button">❯</button>
-            </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Пн</th>
-                        <th>Вт</th>
-                        <th>Ср</th>
-                        <th>Чт</th>
-                        <th>Пт</th>
-                        <th>Сб</th>
-                        <th>Вс</th>
-                    </tr>
-                </thead>
-                <tbody id="calendar-body"></tbody>
-            </table>
-        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+            </thead>
+            <tbody id="calendar-body">
+                <!-- Dates will be dynamically generated here -->
+            </tbody>
+        </table>
     </div>
 
-    <script src="script.js"></script>
+    <script src="./script.js" defer></script>
 </body>
 </html>
