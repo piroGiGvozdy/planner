@@ -14,7 +14,6 @@ body {
 }
 .header-img {
     max-width: 120px;
-    padding-bottom: 15px;
 }
 .calendar {
     display: inline-block;
@@ -27,15 +26,18 @@ body {
     margin: 10px 0;
 }
 .current-month {
-    font-size: 22px;
+    font-size: 28px;
+    font-weight: bold;
     color: var(--dark-blue);
 }
 .nav-button {
     background-color: var(--blue);
     border: none;
     color: var(--dark-blue);
-    font-size: 20px;
-    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    /* align-items: center; */
     padding: 3px 7px;
     border-radius: 10px;
 }
@@ -57,7 +59,7 @@ th {
 .date-button {
     background-color: var(--white-blue);
     color: var(--dark-blue);
-    font-size: 22px;
+    font-size: 24px;
     border: none;
     padding: 10px;
     cursor: pointer;
@@ -74,4 +76,5 @@ th {
 .current-date {
     background-color: var(--dark-blue);
     color: var(--white-blue);
+    font-weight: bold;
 }
