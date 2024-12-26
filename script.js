@@ -8,29 +8,45 @@ function generateCalendar(month, year) {
     const currentMonthDisplay = document.getElementById("current-month");
     calendarBody.innerHTML = "";
 
-    const firstDay = new Date(year, month, 1).getDay();
+    const firstDay = (new Date(year, month, 1).getDay() + 6) % 7; // Adjust for Monday start
     const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const daysInPrevMonth = new Date(year, month, 0).getDate();
 
     currentMonthDisplay.textContent = `${monthNames[month]} ${year}`;
 
     let date = 1;
+    let prevMonthDate = daysInPrevMonth - firstDay + 1;
+    let nextMonthDate = 1;
+
     for (let i = 0; i < 6; i++) {
         const row = document.createElement("tr");
 
         for (let j = 0; j < 7; j++) {
             const cell = document.createElement("td");
+            const button = document.createElement("button");
+
             if (i === 0 && j < firstDay) {
-                cell.textContent = "";
+                button.textContent = prevMonthDate++;
+                button.className = "date-button inactive-date";
+                button.disabled = true;
             } else if (date > daysInMonth) {
-                break;
+                button.textContent = nextMonthDate++;
+                button.className = "date-button inactive-date";
+                button.disabled = true;
             } else {
-                const button = document.createElement("button");
                 button.textContent = date;
                 button.className = "date-button";
+                if (
+                    date === currentDate.getDate() &&
+                    month === currentDate.getMonth() &&
+                    year === currentDate.getFullYear()
+                ) {
+                    button.classList.add("current-date");
+                }
                 button.addEventListener("click", () => alert(`You selected: ${date} ${monthNames[month]} ${year}`));
-                cell.appendChild(button);
                 date++;
             }
+            cell.appendChild(button);
             row.appendChild(cell);
         }
 

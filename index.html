@@ -8,22 +8,25 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <header>
+        <img src="assets/logo.svg" class="header-img" alt="">
+    </header>
     <div class="calendar">
         <div class="month-navigation">
-            <button id="prev-month">&laquo; Previous</button>
-            <span id="current-month">January 2024</span>
-            <button id="next-month">Next &raquo;</button>
+            <button id="prev-month" class="nav-button">&laquo;</button>
+            <span id="current-month" class="current-month">January 2024</span>
+            <button id="next-month" class="nav-button">&raquo;</button>
         </div>
         <table>
             <thead>
                 <tr>
-                    <th>Sun</th>
-                    <th>Mon</th>
-                    <th>Tue</th>
-                    <th>Wed</th>
-                    <th>Thu</th>
-                    <th>Fri</th>
-                    <th>Sat</th>
+                    <th>Пн</th>
+                    <th>Вт</th>
+                    <th>Ср</th>
+                    <th>Чт</th>
+                    <th>Пт</th>
+                    <th>Сб</th>
+                    <th>Вс</th>
                 </tr>
             </thead>
             <tbody id="calendar-body">
