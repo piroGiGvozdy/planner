@@ -135,7 +135,7 @@ th {
     border-left: none;
     border-right: none;
     color: var(--dark-blue);
-    height: 19px; /* Примерная высота ячейки, можно настроить */
+    height: 18px; /* Примерная высота ячейки, можно настроить */
     vertical-align: middle; /* Выравнивание содержимого по вертикали */
     text-align: center; /* Выравнивание содержимого по горизонтали */
     font-size: 14px;
