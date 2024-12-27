@@ -116,15 +116,15 @@ th {
 .planner-table {
     margin-top: 50px; /* Отступ сверху для таблицы */
     width: 100%;
-    height: 100vh; /* Задаем таблице высоту равную 100% высоты экрана */
+    height: 85vh; /* Задаем таблице высоту равную 100% высоты экрана */
     table-layout: fixed; /* Равномерное распределение ширины ячеек */
     border-collapse: collapse;
 }
 
 .planner-body {
     display: block; /* Делаем tbody блочным элементом */
-    height: calc(100vh - 50px); /* Высота тела таблицы с учетом отступа сверху */
-    overflow-y: auto; /* Прокрутка, если данных слишком много */
+    height: calc(85vh - 50px); /* Высота тела таблицы с учетом отступа сверху */
+    /* overflow-y: auto; Прокрутка, если данных слишком много */
 }
 
 .planner-body td {
@@ -133,15 +133,15 @@ th {
     border-left: none;
     border-right: none;
     color: var(--dark-blue);
-    height: 40px; /* Примерная высота ячейки, можно настроить */
+    height: 22px; /* Примерная высота ячейки, можно настроить */
     vertical-align: middle; /* Выравнивание содержимого по вертикали */
     text-align: center; /* Выравнивание содержимого по горизонтали */
 }
 
 .planner-body td:nth-child(1) {
-    width: 10%;
+    width: 20%;
 }
 
 .planner-body td:nth-child(2) {
-    width: 90%;
+    width: 80%;
 }
