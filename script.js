@@ -118,4 +118,53 @@ function GeneratePlanner() {
 
 GeneratePlanner();
 
+let tg = window.Telegram.WebApp;
+tg.expand();
+
+let openModalBtn = document.querySelector(".add-plan");
+let closeModalBtn = document.getElementById("close-modal-btn");
+let modal = document.getElementById("modal");
+let modalOverlay = document.getElementById("modal-overlay");
+let submit = document.getElementById("order");
+
+// Открыть модальное окно
+openModalBtn.addEventListener("click", () => {
+    modal.style.display = "block";
+    modalOverlay.style.display = "block";
+});
+
+// Закрыть модальное окно
+closeModalBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+    modalOverlay.style.display = "none";
+});
+
+// Закрыть модальное окно при клике на фон
+modalOverlay.addEventListener("click", () => {
+    modal.style.display = "none";
+    modalOverlay.style.display = "none";
+});
+
+submit.addEventListener("click", () => {
+    // modal.style.display = "none";
+    // modalOverlay.style.display = "none";
+
+    let start_time = document.getElementById("start_time").value;
+    let end_time = document.getElementById("end_time").value;
+    let plan_name = document.getElementById("plan_name").value;
+
+    let data = {
+        day: IdParts[0],
+        month: monthNamesGenitive[parseInt(IdParts[1])-1],
+        year: IdParts[2],
+        start_time: start_time,
+        end_time: end_time,
+        plan_name: plan_name
+    }
+
+    tg.sendData(JSON.stringify(data));
+
+    tg.close();
+});
+
 
