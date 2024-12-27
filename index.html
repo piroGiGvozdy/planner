@@ -53,31 +53,65 @@
         <h2>Форма</h2>
         <form id="modal-form">
             <div class="time-group">
-                <input type="time" placeholder="Время начала" required step="3600">
-                <input type="time" placeholder="Время окончания" required step="3600">
+                <input type="time" id="start_time" placeholder="Время начала" required step="3600">
+                <input type="time" id="end_time" placeholder="Время окончания" required step="3600">
             </div>
-            <input type="text" placeholder="Название" required>
-            <button type="submit">Отправить</button>
+            <input type="text" id="plan_name" placeholder="Название" required>
+            <button id="order">Отправить</button>
         </form>
     </div>
 
     <script src="./script.js" defer></script>
+    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
     <script>
-        window.onload = function() {
-            if (window.Telegram && window.Telegram.WebApp) {
-                const tg = window.Telegram.WebApp;
+        let tg = window.Telegram.WebApp;
+        tg.expand();
 
-                // Инициализируем WebApp SDK
-                tg.ready(); // Убедитесь, что SDK инициализировано
+        let openModalBtn = document.querySelector('.add-plan');
+        let closeModalBtn = document.getElementById('close-modal-btn');
+        let modal = document.getElementById('modal');
+        let modalOverlay = document.getElementById('modal-overlay');
+        let submit = document.getElementById('order');
 
-                // Разворачиваем приложение на полный экран
-                tg.expand(); // Это скрывает шапку Telegram и делает приложение полноэкранным
+        // Открыть модальное окно
+        openModalBtn.addEventListener('click', () => {
+            modal.style.display = 'block';
+            modalOverlay.style.display = 'block';
+        });
 
-                // Вы можете добавлять другие функции взаимодействия с пользователем
-            } else {
-                console.error('Telegram Web App SDK не найден.');
+        // Закрыть модальное окно
+        closeModalBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+            modalOverlay.style.display = 'none';
+        });
+
+        // Закрыть модальное окно при клике на фон
+        modalOverlay.addEventListener('click', () => {
+            modal.style.display = 'none';
+            modalOverlay.style.display = 'none';
+        });
+
+        submit.addEventListener('click', () => {
+            modal.style.display = 'none';
+            modalOverlay.style.display = 'none';
+
+            let start_time = document.getElementById('start_time').value;
+            let end_time = document.getElementById('end_time').value;
+            let plan_name = document.getElementById('plan_name').value;
+
+            let data = {
+                day: IdParts[0],
+                month: IdParts[1],
+                year: IdParts[2],
+                start_time: start_time,
+                end_time: end_time,
+                plan_name: plan_name
             }
-        }
+
+            tg.sendData(JSON.stringify(data));
+
+            tg.close();
+        });
     </script>
 </body>
 </html>

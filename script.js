@@ -118,26 +118,4 @@ function GeneratePlanner() {
 
 GeneratePlanner();
 
-const openModalBtn = document.querySelector('.add-plan');
-const closeModalBtn = document.getElementById('close-modal-btn');
-const modal = document.getElementById('modal');
-const modalOverlay = document.getElementById('modal-overlay');
-
-// Открыть модальное окно
-openModalBtn.addEventListener('click', () => {
-    modal.style.display = 'block';
-    modalOverlay.style.display = 'block';
-});
-
-// Закрыть модальное окно
-closeModalBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-    modalOverlay.style.display = 'none';
-});
-
-// Закрыть модальное окно при клике на фон
-modalOverlay.addEventListener('click', () => {
-    modal.style.display = 'none';
-    modalOverlay.style.display = 'none';
-});
 
