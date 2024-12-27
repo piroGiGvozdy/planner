@@ -135,10 +135,10 @@ th {
     border-left: none;
     border-right: none;
     color: var(--dark-blue);
-    height: 18px; /* Примерная высота ячейки, можно настроить */
+    height: 20px; /* Примерная высота ячейки, можно настроить */
     vertical-align: middle; /* Выравнивание содержимого по вертикали */
     text-align: center; /* Выравнивание содержимого по горизонтали */
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .planner-body td:nth-child(1) {
