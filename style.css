@@ -116,14 +116,14 @@ th {
 .planner-table {
     margin-top: 50px; /* Отступ сверху для таблицы */
     width: 100%;
-    height: 85vh; /* Задаем таблице высоту равную 100% высоты экрана */
+    height: 100%; /* Задаем таблице высоту равную 100% высоты экрана */
     table-layout: fixed; /* Равномерное распределение ширины ячеек */
     border-collapse: collapse;
 }
 
 .planner-body {
     display: block; /* Делаем tbody блочным элементом */
-    height: calc(85vh - 50px); /* Высота тела таблицы с учетом отступа сверху */
+    height: 100%; /* Высота тела таблицы с учетом отступа сверху */
     /* overflow-y: auto; Прокрутка, если данных слишком много */
 }
 
@@ -139,9 +139,9 @@ th {
 }
 
 .planner-body td:nth-child(1) {
-    width: 20%;
+    width: 30%;
 }
 
 .planner-body td:nth-child(2) {
-    width: 80%;
+    width: 70%;
 }
