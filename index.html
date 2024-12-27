@@ -43,11 +43,22 @@
     </div>
 
     <script src="./script.js" defer></script>
-    <script type="module">
-        // Подключаем WebApp SDK
-        const tg = window.Telegram.WebApp;
-        tg.ready();  // Инициализация SDK
-        tg.expand(); // Разворачиваем приложение на весь экран
+    <script>
+        window.onload = function() {
+            if (window.Telegram && window.Telegram.WebApp) {
+                const tg = window.Telegram.WebApp;
+
+                // Инициализируем WebApp SDK
+                tg.ready(); // Убедитесь, что SDK инициализировано
+
+                // Разворачиваем приложение на полный экран
+                tg.expand(); // Это скрывает шапку Telegram и делает приложение полноэкранным
+
+                // Вы можете добавлять другие функции взаимодействия с пользователем
+            } else {
+                console.error('Telegram Web App SDK не найден.');
+            }
+        }
     </script>
 </body>
 </html>
