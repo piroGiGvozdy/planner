@@ -112,10 +112,24 @@ th {
     font-size: 28px;
     font-weight: bold;
     color: var(--dark-blue);
+    margin-bottom: 10px;
+}
+
+.buttons button{
+    margin-top: 15px;
+    background-color: var(--blue);
+    border: none;
+    color: var(--dark-blue);
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    padding: 3px 7px;
+    border-radius: 10px;
 }
 
 .planner-table {
-    margin-top: 50px; /* Отступ сверху для таблицы */
+    margin-top: 20px; /* Отступ сверху для таблицы */
     width: 100%;
     height: 100%; /* Задаем таблице высоту равную 100% высоты экрана */
     table-layout: fixed; /* Равномерное распределение ширины ячеек */
@@ -138,7 +152,7 @@ th {
     height: 18px; /* Примерная высота ячейки, можно настроить */
     vertical-align: middle; /* Выравнивание содержимого по вертикали */
     text-align: center; /* Выравнивание содержимого по горизонтали */
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .planner-body td:nth-child(1) {
