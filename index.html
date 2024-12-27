@@ -43,5 +43,11 @@
     </div>
 
     <script src="./script.js" defer></script>
+    <script type="module">
+        // Подключаем WebApp SDK
+        const tg = window.Telegram.WebApp;
+        tg.ready();  // Инициализация SDK
+        tg.expand(); // Разворачиваем приложение на весь экран
+    </script>
 </body>
 </html>
