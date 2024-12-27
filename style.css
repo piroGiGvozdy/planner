@@ -162,3 +162,79 @@ th {
 .planner-body td:nth-child(2) {
     width: 70%;
 }
+
+
+/* FORM */
+
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Чтобы окно было поверх других элементов */
+}
+
+/* Стили для фона модального окна */
+.modal-overlay {
+    display: none; /* Скрыт по умолчанию */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    z-index: 999; /* Фон будет под модальным окном */
+}
+
+/* Стили для кнопки закрытия */
+.close-modal-btn {
+    background-color: var(--blue);
+    border: none;
+    color: var(--dark-blue);
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    padding: 3px 7px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Стиль для формы внутри модального окна */
+.modal form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal input {
+    outline: none;
+    background-color: var(--bg-color);
+    margin-bottom: 10px;
+    padding: 2px;
+    font-size: 16px;
+    border: 2px solid var(--dark-blue);
+    border-radius: 10px;
+}
+
+.modal input:focus {
+    border-color: coral;
+}
+
+.modal button {
+    background-color: var(--blue);
+    border: none;
+    color: var(--dark-blue);
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    padding: 3px 7px;
+    border-radius: 10px;
+    cursor: pointer;
+}

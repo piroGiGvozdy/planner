@@ -39,12 +39,23 @@
 
         <div class="buttons">
             <button class="add-plan">Добавить</button>
-            <button class="delete-plan">Удалить</button>
+            <button id="delete-plan" class="delete-plan">Удалить</button>
         </div>
 
         <table class="planner-table">
             <tbody id="planner-body" class="planner-body"></tbody>
         </table>
+    </div>
+
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal" id="modal">
+        <button class="close-modal-btn" id="close-modal-btn">Закрыть</button>
+        <h2>Форма</h2>
+        <form id="modal-form">
+            <input type="text" placeholder="Ваше имя" required>
+            <input type="email" placeholder="Ваш email" required>
+            <button type="submit">Отправить</button>
+        </form>
     </div>
 
     <script src="./script.js" defer></script>
