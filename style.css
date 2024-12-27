@@ -86,7 +86,7 @@ th {
 
 .planner-page {
     display: none;
-    background-color: var(--white-blue);
+    background-color: var(--bg-color);
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
