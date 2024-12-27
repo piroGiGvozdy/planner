@@ -12,6 +12,7 @@ html, body {
     padding: 0;
     background: var(--bg-color);
     height: 100%;
+    scroll-behavior: smooth;
 }
 .header-img {
     max-width: 120px;
