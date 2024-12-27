@@ -1,4 +1,5 @@
 const monthNames = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
+const monthNamesGenitive = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"];
 const currentDate = new Date();
 let currentMonth = currentDate.getMonth();
 let currentYear = currentDate.getFullYear();
@@ -34,6 +35,7 @@ function generateCalendar(month, year) {
             } else {
                 button.textContent = date;
                 button.className = "date-button";
+                button.id = `date-${date}-${month + 1}-${year}`;
                 if (
                     date === currentDate.getDate() &&
                     month === currentDate.getMonth() &&
@@ -72,3 +74,47 @@ document.getElementById("next-month").addEventListener("click", () => {
 });
 
 generateCalendar(currentMonth, currentYear);
+
+document.getElementById("calendar-body").addEventListener("click", function(event) {
+    if (event.target && event.target.classList.contains("date-button")) {
+        IdParts = event.target.id.split('-').slice(1);
+        const selectedDate = `${IdParts[0]} ${monthNamesGenitive[parseInt(IdParts[1])-1]} ${IdParts[2]}`
+        const selectedDateDisplay = document.getElementById("selected-date");
+        document.getElementById("calendar").style.display = "none";
+        document.getElementById("planner-page").style.display = "inline-block";
+        selectedDateDisplay.textContent = selectedDate;
+    }
+});
+
+document.getElementById("back-button").addEventListener("click", () => {
+    document.getElementById("calendar").style.display = "inline-block";
+    document.getElementById("planner-page").style.display = "none";
+});
+
+function GeneratePlanner() {
+    // const firstColumnWidth = "50px";
+    const plannerBody = document.getElementById("planner-body");
+    
+    for (let i = 0; i < 24; i++) {
+        const row = document.createElement("tr");
+
+        for (let j = 0; j < 2; j++) {
+            const cell = document.createElement("td");
+            // if (j === 0) {
+            //     cell.style.width = firstColumnWidth;
+            // }
+
+            if (i < 10 && j === 0) {
+                cell.textContent = (i === 9) ? `0${i}:00-${i+1}:00` : `0${i}:00-0${i+1}:00`;
+            }
+            else if (i >= 10 && j === 0){
+                cell.textContent = `${i}:00-${i+1}:00`;
+            }
+            row.appendChild(cell);
+        }
+        plannerBody.appendChild(row);
+    }
+}
+
+GeneratePlanner();
+

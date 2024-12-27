@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <header>
-        <img src="assets/logo.svg" class="header-img" alt="">
-    </header>
-    <div class="calendar">
+    <div class="calendar" id="calendar">
+        <header>
+            <img src="assets/logo.svg" class="header-img" alt="">
+        </header>
         <div class="month-navigation">
             <button id="prev-month" class="nav-button">&laquo;</button>
             <span id="current-month" class="current-month">January 2024</span>
@@ -29,9 +29,16 @@
                     <th>Вс</th>
                 </tr>
             </thead>
-            <tbody id="calendar-body">
-                <!-- Dates will be dynamically generated here -->
-            </tbody>
+            <tbody id="calendar-body"></tbody>
+        </table>
+    </div>
+
+    <div class="planner-page" id="planner-page">
+        <button id="back-button" class="back-button">&laquo;</button>
+        <span id="selected-date" class="selected-date">January 2024</span>
+
+        <table class="planner-table">
+            <tbody id="planner-body" class="planner-body"></tbody>
         </table>
     </div>
 

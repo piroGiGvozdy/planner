@@ -5,12 +5,13 @@
     --bg-color: rgba(215, 238, 244, 52);
 }
 
-body {
+html, body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
     background: var(--bg-color);
+    height: 100%;
 }
 .header-img {
     max-width: 120px;
@@ -37,7 +38,7 @@ body {
     font-size: 28px;
     font-weight: bold;
     text-align: center;
-    /* align-items: center; */
+    align-items: center;
     padding: 3px 7px;
     border-radius: 10px;
 }
@@ -72,11 +73,75 @@ th {
 }
 .inactive-date {
     background-color: var(--blue);
-    /* color: #666666; */
     cursor: not-allowed;
 }
 .current-date {
     background-color: var(--dark-blue);
     color: var(--white-blue);
     font-weight: bold;
+}
+
+/* PLANNER PAGE */
+
+.planner-page {
+    display: none;
+    background: var(--white-blue);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.back-button {
+    position: absolute;
+    top: 7px;
+    left: 10px;
+    background-color: var(--blue);
+    border: none;
+    color: var(--dark-blue);
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    padding: 3px 7px;
+    border-radius: 10px;
+}
+
+.selected-date {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+.planner-table {
+    margin-top: 50px; /* Отступ сверху для таблицы */
+    width: 100%;
+    height: 100vh; /* Задаем таблице высоту равную 100% высоты экрана */
+    table-layout: fixed; /* Равномерное распределение ширины ячеек */
+    border-collapse: collapse;
+}
+
+.planner-body {
+    display: block; /* Делаем tbody блочным элементом */
+    height: calc(100vh - 50px); /* Высота тела таблицы с учетом отступа сверху */
+    overflow-y: auto; /* Прокрутка, если данных слишком много */
+}
+
+.planner-body td {
+    border-top: 1px solid var(--dark-blue); /* Горизонтальная граница */
+    border-bottom: 1px solid var(--dark-blue); /* Горизонтальная граница */
+    border-left: none;
+    border-right: none;
+    color: var(--dark-blue);
+    height: 40px; /* Примерная высота ячейки, можно настроить */
+    vertical-align: middle; /* Выравнивание содержимого по вертикали */
+    text-align: center; /* Выравнивание содержимого по горизонтали */
+}
+
+.planner-body td:nth-child(1) {
+    width: 10%;
+}
+
+.planner-body td:nth-child(2) {
+    width: 90%;
 }
